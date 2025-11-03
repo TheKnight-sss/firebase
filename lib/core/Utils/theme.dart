@@ -1,0 +1,35 @@
+import 'package:bookia/core/Utils/colors.dart';
+import 'package:bookia/core/Utils/text_styles.dart';
+import 'package:bookia/core/constants/app_fonts.dart';
+import 'package:flutter/material.dart';
+
+class AppTheme {
+  static ThemeData get lightTheme => ThemeData(
+    scaffoldBackgroundColor: AppColor.whiteColor,
+    primaryColor: AppColor.primaryColor,
+    fontFamily: AppFonts.dmserif,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColor.whiteColor,
+      surfaceTintColor: Colors.transparent,
+      centerTitle: true,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      type: BottomNavigationBarType.fixed,
+    ),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColor.primaryColor,
+      onSurface: AppColor.darkColor,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      fillColor: AppColor.accentColor,
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColor.borderColor),
+      ),
+      filled: true,
+      hintStyle: TextStyles.styleSize14(color: AppColor.greyColor),
+    ),
+    dividerTheme: DividerThemeData(color: AppColor.borderColor),
+  );
+}
