@@ -1,6 +1,6 @@
-import 'package:bookia/core/Utils/colors.dart';
-import 'package:bookia/core/Utils/text_styles.dart';
-import 'package:bookia/core/constants/app_fonts.dart';
+import 'package:fire/core/Utils/colors.dart';
+import 'package:fire/core/Utils/text_styles.dart';
+import 'package:fire/core/constants/app_fonts.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
