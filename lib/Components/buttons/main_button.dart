@@ -39,7 +39,7 @@ class MainButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyles.styleSize20(color: textColor ?? Colors.white),
+          style: TextStyles.body(color: textColor ?? Colors.white),
         ),
       ),
     );

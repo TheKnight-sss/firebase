@@ -11,6 +11,8 @@ dependencies:
   flutter_bloc: ^9.1.1
   easy_locale: ^0.0.12
   easy_localization: ^3.0.8
+  flutter_locoliazations:
+    sdk: flutter
   firebase_core: ^4.2.1
   flutter:
     sdk: flutter

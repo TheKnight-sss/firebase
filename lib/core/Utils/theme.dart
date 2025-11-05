@@ -25,11 +25,9 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       fillColor: AppColor.accentColor,
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.borderColor),
       ),
       filled: true,
-      hintStyle: TextStyles.styleSize14(color: AppColor.greyColor),
+      hintStyle: TextStyles.small(color: AppColor.greyColor),
     ),
-    dividerTheme: DividerThemeData(color: AppColor.borderColor),
   );
 }

@@ -12,12 +12,12 @@ showMyDialog(
 }) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Text(message, style: TextStyles.styleSize16()),
+      content: Text(message, style: TextStyles.body()),
       backgroundColor: type == Dialogs.error
           ? Colors.red
           : type == Dialogs.success
           ? AppColor.primaryColor
-          : AppColor.cardColor,
+          : AppColor.accentColor,
       behavior: SnackBarBehavior.floating,
       margin: EdgeInsets.all(20),
       shape: RoundedRectangleBorder(

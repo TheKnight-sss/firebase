@@ -18,29 +18,29 @@ class Routes {
     navigatorKey: navigatorKey,
     routes: [
       GoRoute(path: splash, builder: (context, state) => const SplashScreen()),
-      GoRoute(
-        path: welcome,
-        builder: (context, state) => const WelcomeScreen(),
-      ),
-      GoRoute(
-        path: login,
-        builder: (context, state) => BlocProvider(
-          create: (context) => AuthCubit(),
-          child: const LoginScreen(),
-        ),
-      ),
-      GoRoute(
-        path: register,
-        builder: (context, state) => BlocProvider(
-          create: (context) => AuthCubit(),
-          child: const RegisterScreen(),
-        ),
-      ),
-      GoRoute(
-        path: main,
-        builder: (context, state) =>
-             MainAppScreen(index: state.extra as int?),
-      ),
+      // GoRoute(
+      //   path: welcome,
+      //   builder: (context, state) => const WelcomeScreen(),
+      // ),
+      // GoRoute(
+      //   path: login,
+      //   builder: (context, state) => BlocProvider(
+      //     create: (context) => AuthCubit(),
+      //     child: const LoginScreen(),
+      //   ),
+      // ),
+      // GoRoute(
+      //   path: register,
+      //   builder: (context, state) => BlocProvider(
+      //     create: (context) => AuthCubit(),
+      //     child: const RegisterScreen(),
+      //   ),
+      // ),
+      // GoRoute(
+      //   path: main,
+      //   builder: (context, state) =>
+      //        MainAppScreen(index: state.extra as int?),
+      // ),
       
     ],
   );
