@@ -7,7 +7,7 @@ class AppTheme {
   static ThemeData get lightTheme => ThemeData(
     scaffoldBackgroundColor: AppColor.whiteColor,
     primaryColor: AppColor.primaryColor,
-    fontFamily: AppFonts.dmserif,
+    fontFamily: AppFonts.cairo,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColor.whiteColor,
       surfaceTintColor: Colors.transparent,
@@ -27,7 +27,7 @@ class AppTheme {
       enabledBorder: OutlineInputBorder(
       ),
       filled: true,
-      hintStyle: TextStyles.small(color: AppColor.greyColor),
+      hintStyle: TextStyles.small,
     ),
   );
 }

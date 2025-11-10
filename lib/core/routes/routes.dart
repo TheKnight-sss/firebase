@@ -1,7 +1,6 @@
-
+import 'package:fire/core/features/onboarding/onboarding_screen.dart';
 import 'package:fire/core/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -9,15 +8,20 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 class Routes {
   static const String splash = '/';
   static const String welcome = '/welcome';
+  static const String onboarding = '/onboarding';
   static const String login = '/login';
   static const String register = '/register';
   static const String main = '/main';
-
 
   static GoRouter routes = GoRouter(
     navigatorKey: navigatorKey,
     routes: [
       GoRoute(path: splash, builder: (context, state) => const SplashScreen()),
+      GoRoute(
+        path: onboarding,
+        builder: (context, state) => const OnboardingScreen(),
+      ),
+
       // GoRoute(
       //   path: welcome,
       //   builder: (context, state) => const WelcomeScreen(),
@@ -41,7 +45,6 @@ class Routes {
       //   builder: (context, state) =>
       //        MainAppScreen(index: state.extra as int?),
       // ),
-      
     ],
   );
 }

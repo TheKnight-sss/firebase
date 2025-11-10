@@ -5,14 +5,14 @@ import 'package:lottie/lottie.dart';
 
 enum Dialogs { error, success, warring }
 
-showMyDialog(
+void showMyDialog(
   BuildContext context,
   String message, {
   Dialogs type = Dialogs.error,
 }) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Text(message, style: TextStyles.body()),
+      content: Text(message, style: TextStyles.body),
       backgroundColor: type == Dialogs.error
           ? Colors.red
           : type == Dialogs.success
@@ -28,7 +28,7 @@ showMyDialog(
   );
 }
 
-showLoadingDialog(BuildContext context) {
+void showLoadingDialog(BuildContext context) {
   showDialog(
     context: context,
     barrierDismissible: false,

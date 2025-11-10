@@ -1,51 +1,26 @@
+import 'package:fire/core/Utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class TextStyles {
-  static TextStyle headLine({
-    Color? color,
-    double fontSize = 24,
-    FontWeight fontweight = FontWeight.bold,
-  }) {
-    return TextStyle(fontSize: fontSize, fontWeight: fontweight, color: color);
-  }
+  static const  TextStyle headLine = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+  );
 
-  static TextStyle subHeadline({
-    Color? color,
-    double fontSize = 20,
-    FontWeight fontweight = FontWeight.bold,
-  }) {
-    return TextStyle(fontSize: fontSize, fontWeight: fontweight, color: color);
-  }
+  static const  TextStyle subHeadline = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
 
-  static TextStyle title({
-    Color? color,
-    double fontSize = 18,
-    FontWeight fontweight = FontWeight.bold,
-  }) {
-    return TextStyle(fontSize: fontSize, fontWeight: fontweight, color: color);
-  }
+  static const  TextStyle title = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: AppColor.primaryColor,
+  );
 
-  static TextStyle body({
-    Color? color,
-    double fontSize = 16,
-    FontWeight fontweight = FontWeight.normal,
-  }) {
-    return TextStyle(fontSize: fontSize, fontWeight: fontweight, color: color);
-  }
+  static const  TextStyle body = TextStyle(fontSize: 16);
 
-  static TextStyle small({
-    Color? color,
-    double fontSize = 14,
-    FontWeight fontweight = FontWeight.normal,
-  }) {
-    return TextStyle(fontSize: fontSize, fontWeight: fontweight, color: color);
-  }
+  static const TextStyle small = TextStyle(fontSize: 14);
 
-  static TextStyle caption({
-    Color? color,
-    double fontSize = 12,
-    FontWeight fontweight = FontWeight.normal,
-  }) {
-    return TextStyle(fontSize: fontSize, fontWeight: fontweight, color: color);
-  }
+  static const  TextStyle caption = TextStyle(fontSize: 12);
 }

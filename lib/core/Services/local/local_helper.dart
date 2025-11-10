@@ -6,11 +6,11 @@ class SharedPref {
   static const String kuserData = 'userData';
   static const String kwishList = 'wishList';
 
-  static init() async {
+  static Future<void> init() async {
     pref = await SharedPreferences.getInstance();
   }
 
-  static saveData(String key, dynamic value) {
+  static void saveData(String key, dynamic value) {
     if (value is int) {
       pref.setInt(key, value);
     } else if (value is String) {
