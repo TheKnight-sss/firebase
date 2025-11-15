@@ -24,7 +24,22 @@ class AppTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       fillColor: AppColor.accentColor,
+      prefixIconColor: AppColor.primaryColor,
       enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(15),
+        borderSide: BorderSide(color: AppColor.accentColor),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(15),
+        borderSide: BorderSide(color: AppColor.primaryColor),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(15),
+        borderSide: BorderSide(color: Colors.red.shade400),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(15),
+        borderSide: BorderSide(color: Colors.red.shade700),
       ),
       filled: true,
       hintStyle: TextStyles.small,

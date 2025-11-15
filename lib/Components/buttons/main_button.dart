@@ -34,7 +34,7 @@ class MainButton extends StatelessWidget {
           side: borderColor != null
               ? BorderSide(color: borderColor ?? AppColor.darkColor)
               : BorderSide.none,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         ),
         onPressed: onPressed,
         child: Text(

@@ -36,7 +36,7 @@ void showLoadingDialog(BuildContext context) {
     builder: (context) {
       return Center(
         child: Lottie.asset(
-          "assets/images/Loading.json",
+          "assets/images/loading.json",
           width: 180,
           height: 180,
           fit: BoxFit.contain,

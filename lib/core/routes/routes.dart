@@ -1,6 +1,12 @@
+import 'package:fire/core/features/auth/data/models/user_type_enum.dart';
+import 'package:fire/core/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:fire/core/features/auth/presentation/login/page/login_screen.dart';
+import 'package:fire/core/features/auth/presentation/register/page/register_screen.dart';
 import 'package:fire/core/features/onboarding/onboarding_screen.dart';
 import 'package:fire/core/features/splash/splash_screen.dart';
+import 'package:fire/core/features/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -21,11 +27,25 @@ class Routes {
         path: onboarding,
         builder: (context, state) => const OnboardingScreen(),
       ),
+      GoRoute(
+        path: welcome,
+        builder: (context, state) => const WelcomeScreen(),
+      ),
+      GoRoute(
+        path: login,
+        builder: (context, state) => BlocProvider(
+          create: (context) => AuthCubit(),
+          child: LoginScreen(userType: state.extra as UserTypeEnum),
+        ),
+      ),
+      GoRoute(
+        path: register,
+        builder: (context, state) => BlocProvider(
+          create: (context) => AuthCubit(),
+          child: RegisterScreen(userType: state.extra as UserTypeEnum),
+        ),
+      ),
 
-      // GoRoute(
-      //   path: welcome,
-      //   builder: (context, state) => const WelcomeScreen(),
-      // ),
       // GoRoute(
       //   path: login,
       //   builder: (context, state) => BlocProvider(

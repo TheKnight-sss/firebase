@@ -10,11 +10,15 @@ class PasswordTextField extends StatefulWidget {
 
     this.readOnly,
     this.onTap,
+    this.maxLines,
+    required this.textAlign,
   });
 
   final String? hint;
   final Widget? prefixIcon;
   final TextEditingController? controller;
+  final int? maxLines;
+  final TextAlign textAlign;
 
   final bool? readOnly;
   final Function()? onTap;
@@ -34,7 +38,10 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       validator: widget.validator,
       readOnly: widget.readOnly ?? false,
       onTap: widget.onTap,
+      textAlign: widget.textAlign,
+      maxLines: widget.maxLines,
       decoration: InputDecoration(
+        prefixIcon: widget.prefixIcon,
         hintText: widget.hint,
         suffixIcon: GestureDetector(
           onTap: () {
@@ -42,7 +49,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
               _obscureText = !_obscureText;
             });
           },
-          child: Icon(  
+          child: Icon(
             _obscureText ? Icons.visibility_off : Icons.visibility,
             color: Colors.grey,
           ),
