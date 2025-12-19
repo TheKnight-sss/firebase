@@ -1,7 +1,8 @@
 import 'package:fire/Components/buttons/main_button.dart';
+import 'package:fire/core/Services/local/local_helper.dart';
 import 'package:fire/core/Utils/colors.dart';
 import 'package:fire/core/Utils/text_styles.dart';
-import 'package:fire/core/features/onboarding/onboarding_model.dart';
+import 'package:fire/core/features/intro/onboarding/onboarding_model.dart';
 import 'package:fire/core/routes/navigation.dart';
 import 'package:fire/core/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       appBar: AppBar(
         actions: [
           if (currentindex != onboardingList.length - 1)
-            TextButton(onPressed: () {}, child: Text("تخطي")),
+            TextButton(onPressed: () {
+              SharedPref.setOnboardingsSeen();
+              pushTo(context, Routes.welcome);
+            }, child: Text("تخطي")),
         ],
       ),
       body: SafeArea(
@@ -90,7 +94,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     MainButton(
                       text: "هيا بنا",
                       onPressed: () {
-                        pushTo(context, Routes.welcome);
+                        SharedPref.setOnboardingsSeen();
+                        pushwithReplacement(context, Routes.welcome);
                       },
                       width: 100,
                       height: 45,

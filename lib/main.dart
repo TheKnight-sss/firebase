@@ -1,12 +1,15 @@
+import 'package:fire/core/Services/local/local_helper.dart';
 import 'package:fire/core/Utils/theme.dart';
 import 'package:fire/core/routes/routes.dart';
+import 'package:fire/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await SharedPref.init();
   runApp(const MainApp());
 }
 

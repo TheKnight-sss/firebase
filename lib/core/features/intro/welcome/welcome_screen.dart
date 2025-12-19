@@ -1,7 +1,7 @@
 import 'package:fire/core/Utils/colors.dart';
 import 'package:fire/core/Utils/text_styles.dart';
 import 'package:fire/core/constants/app_images.dart';
-import 'package:fire/core/features/auth/data/models/user_type_enum.dart';
+import 'package:fire/core/features/auth/models/user_type_enum.dart';
 import 'package:fire/core/routes/navigation.dart';
 import 'package:fire/core/routes/routes.dart';
 import 'package:flutter/material.dart';

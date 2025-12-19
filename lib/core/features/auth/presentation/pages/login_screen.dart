@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:fire/Components/buttons/main_button.dart';
 import 'package:fire/Components/inputs/custom_text_field.dart';
@@ -6,7 +5,7 @@ import 'package:fire/Components/inputs/password_text_field.dart';
 import 'package:fire/core/Utils/colors.dart';
 import 'package:fire/core/Utils/text_styles.dart';
 import 'package:fire/core/constants/app_images.dart';
-import 'package:fire/core/features/auth/data/models/user_type_enum.dart';
+import 'package:fire/core/features/auth/models/user_type_enum.dart';
 import 'package:fire/core/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:fire/core/features/auth/presentation/cubit/auth_state.dart';
 import 'package:fire/core/functions/dialogs.dart';
@@ -32,8 +31,13 @@ class LoginScreen extends StatelessWidget {
             if (state is AuthLoadingState) {
               showLoadingDialog(context);
             } else if (state is AuthSuccessState) {
-              log("Login Success");
               pop(context);
+              if (state.role == 'doctor') {
+                pushwithReplacement(context, Routes.docregister);
+              } else{
+                goToBase(context, Routes.patientmain);
+              }
+              // log("Register Success");
             } else if (state is AuthFailureState) {
               Navigator.pop(context);
               showMyDialog(context, state.errorMessage);
@@ -101,7 +105,7 @@ class LoginScreen extends StatelessWidget {
                     text: "تسجيل الدخول",
                     onPressed: () {
                       if (cubit.formKey.currentState!.validate()) {
-                        // cubit.login(type: userType);
+                        cubit.login();
                       }
                     },
                   ),

@@ -13,6 +13,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.readOnly,
     this.onTap,
+    this.inputFormatters,
     this.textAlign = TextAlign.start,
     this.keyboardType,
   });
@@ -27,6 +28,7 @@ class CustomTextField extends StatelessWidget {
   final Function()? onTap;
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
   final TextAlign textAlign;
 
   @override
@@ -36,12 +38,13 @@ class CustomTextField extends StatelessWidget {
       validator: validator,
       readOnly: readOnly ?? false,
       onTap: onTap,
-      inputFormatters: [
-        // LengthLimitingTextInputFormatter(10),
-        FilteringTextInputFormatter.allow(RegExp("[a-zA-Z0-9@.-_]")),
-      ],
       keyboardType: keyboardType,
       textAlign: textAlign,
+      textDirection: TextDirection.rtl,
+      // Allow callers to supply optional inputFormatters per-field. If
+      // null, no additional filtering will be applied and the native
+      // keyboard input is accepted.
+      inputFormatters: inputFormatters,
       decoration: InputDecoration(hintText: hint, suffixIcon: suffixIcon),
       minLines: minLines,
       maxLines: maxLines,

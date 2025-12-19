@@ -6,8 +6,18 @@ class SharedPref {
   static const String kuserData = 'userData';
   static const String kwishList = 'wishList';
 
+  static const String konboardingSeen = 'onboardingSeen';
+
   static Future<void> init() async {
     pref = await SharedPreferences.getInstance();
+  }
+
+  static Future<void> setOnboardingsSeen() async {
+   await pref.setBool(konboardingSeen, true);
+  }
+
+  static bool isOnboardingsSeen() {
+    return pref.getBool(konboardingSeen)?? false;
   }
 
   static void saveData(String key, dynamic value) {

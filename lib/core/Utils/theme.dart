@@ -11,6 +11,10 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColor.whiteColor,
       surfaceTintColor: Colors.transparent,
+      titleTextStyle: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w600
+      ),
       centerTitle: true,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
