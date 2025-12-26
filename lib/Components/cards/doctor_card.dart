@@ -1,6 +1,6 @@
 import 'package:fire/core/Utils/colors.dart';
 import 'package:fire/core/Utils/text_styles.dart';
-import 'package:fire/core/features/auth/models/doctor_model.dart';
+import 'package:fire/features/auth/models/doctor_model.dart';
 import 'package:fire/core/routes/navigation.dart';
 import 'package:fire/core/routes/routes.dart';
 import 'package:flutter/material.dart';

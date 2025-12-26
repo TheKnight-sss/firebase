@@ -1,4 +1,4 @@
-import 'package:fire/core/Services/local/local_helper.dart';
+import 'package:fire/Services/local/local_helper.dart';
 import 'package:fire/core/Utils/theme.dart';
 import 'package:fire/core/routes/routes.dart';
 import 'package:fire/firebase_options.dart';
